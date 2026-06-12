@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shannons HVAC Limited | Heating, Cooling & Ventilation, Alexandra</title>
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box}
+        :root {--accent:#f97316;--dark:#1a1a1a;--light:#f5f5f5}
+        body {font-family:'Poppins',sans-serif;color:#333;line-height:1.6}
+        nav {position:sticky;top:0;background:var(--dark);color:white;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100}
+        nav .logo {font-weight:700;letter-spacing:1px;font-size:1.1rem}
+        nav .accent {color:var(--accent)}
+        nav a {color:white;text-decoration:none;margin:0 1rem;transition:color 0.3s}
+        nav a:hover {color:var(--accent)}
+        .hero {background:linear-gradient(135deg,#1a1a1a,#2d2d2d);color:white;padding:6rem 2rem;text-align:center;position:relative;overflow:hidden;animation:fadeIn 0.6s ease-out}
+        .hero::before {content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&h=1200&fit=crop');opacity:0.2;background-size:cover}
+        .hero-content {position:relative;z-index:1;max-width:700px;margin:0 auto}
+        .hero h1 {font-size:3rem;margin-bottom:1rem;letter-spacing:1px}
+        .hero p {font-size:1.1rem;margin-bottom:2rem}
+        .cta {background:var(--accent);color:white;padding:1rem 2.5rem;text-decoration:none;display:inline-block;font-weight:700;transition:all 0.3s;border-radius:4px}
+        .cta:hover {background:#ea580c;transform:translateY(-2px)}
+        .trust {background:var(--dark);color:white;padding:3rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+        .trust h3 {color:var(--accent);margin-bottom:0.5rem}
+        .services {padding:5rem 2rem;background:white}
+        .services h2 {text-align:center;font-size:2.5rem;margin-bottom:3rem;letter-spacing:1px}
+        .service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+        .service-card {background:var(--light);padding:2rem;border-left:4px solid var(--accent);transition:all 0.3s}
+        .service-card:hover {transform:translateY(-5px);box-shadow:0 10px 30px rgba(249,115,22,0.15)}
+        .service-card h3 {color:var(--accent);margin-bottom:0.5rem}
+        .about {padding:5rem 2rem;background:var(--light)}
+        .about-container {display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto;align-items:center}
+        .about-img {height:400px;background:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=600&fit=crop') center/cover;border:4px solid var(--accent)}
+        .about h2 {font-size:2rem;margin-bottom:1rem;letter-spacing:1px}
+        .about-eyebrow {color:var(--accent);text-transform:uppercase;font-weight:700;font-size:0.85rem;letter-spacing:2px;margin-bottom:0.5rem}
+        .about p {margin-bottom:1rem;color:#666}
+        .checklist {list-style:none;margin-top:1.5rem}
+        .checklist li {padding:0.5rem 0 0.5rem 1.5rem;position:relative}
+        .checklist li::before {content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+        .team {padding:5rem 2rem;background:white}
+        .team h2 {text-align:center;font-size:2rem;margin-bottom:0.5rem;letter-spacing:1px}
+        .team-badge {text-align:center;color:var(--accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-weight:700}
+        .team-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;max-width:900px;margin:0 auto}
+        .team-card {text-align:center}
+        .avatar {width:100px;height:100px;background:var(--dark);border:4px solid var(--accent);border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.5rem;font-weight:700}
+        .team-card h3 {margin-bottom:0.3rem;font-size:1rem}
+        .team-card p {font-size:0.9rem;color:#666}
+        .reviews {padding:5rem 2rem;background:var(--light)}
+        .reviews h2 {text-align:center;font-size:2rem;margin-bottom:0.5rem;letter-spacing:1px}
+        .reviews-badge {text-align:center;color:var(--accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-weight:700}
+        .review-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+        .review-card {background:white;padding:1.5rem;border-left:4px solid var(--accent)}
+        .stars {color:var(--accent);margin-bottom:0.5rem}
+        .review-author {font-weight:700;font-size:0.9rem}
+        .funnel {background:var(--accent);color:white;padding:3rem 2rem;text-align:center}
+        .funnel a {background:white;color:var(--accent);padding:0.8rem 2rem;text-decoration:none;display:inline-block;font-weight:700;margin-top:1rem;transition:all 0.3s}
+        .funnel a:hover {transform:scale(1.05)}
+        .contact {padding:5rem 2rem;background:white}
+        .contact-container {display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
+        .contact h2 {font-size:2rem;margin-bottom:2rem;letter-spacing:1px}
+        .contact-item {margin-bottom:1.5rem}
+        .contact-item h3 {color:var(--accent);margin-bottom:0.3rem}
+        .contact-form {display:flex;flex-direction:column}
+        .contact-form label {font-weight:700;margin:1rem 0 0.3rem;font-size:0.9rem}
+        .contact-form input,.contact-form textarea {padding:0.8rem;border:1px solid #ddd;font-family:'Poppins',sans-serif;border-radius:4px}
+        .contact-form input:focus,.contact-form textarea:focus {outline:none;border-color:var(--accent)}
+        .contact-form button {margin-top:1.5rem;padding:0.8rem 2rem;background:var(--accent);color:white;border:none;font-weight:700;cursor:pointer;transition:all 0.3s}
+        .contact-form button:hover {background:#ea580c;transform:translateY(-2px)}
+        footer {background:var(--dark);color:white;padding:2rem;text-align:center;border-top:4px solid var(--accent)}
+        footer a {color:var(--accent);text-decoration:none;margin:0 1rem;transition:color 0.3s}
+        footer a:hover {color:white}
+        @keyframes fadeIn {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @media(max-width:768px) {.about-container{grid-template-columns:1fr}.contact-container{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">SHANNONS <span class="accent">HVAC</span></div>
+        <div style="display:flex;gap:1.5rem;align-items:center">
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+64274446761" class="cta" style="margin:0">Call Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Climate Control Solutions</h1>
+            <p>Professional HVAC services for residential and commercial properties</p>
+            <a href="tel:+64274446761" class="cta">Call +64 27 444 6761</a>
+        </div>
+    </section>
+
+    <section class="trust" style="background:var(--dark);color:white;padding:3rem 2rem">
+        <div>
+            <h3>Expert Installation</h3>
+            <p>Certified HVAC technicians with years of experience</p>
+        </div>
+        <div>
+            <h3>Fast Response</h3>
+            <p>Quick turnaround on service calls and maintenance</p>
+        </div>
+        <div>
+            <h3>Fair Pricing</h3>
+            <p>Transparent quotes with no hidden charges</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>System Installation</h3>
+                <p>Complete HVAC system design and installation for homes and businesses</p>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance & Service</h3>
+                <p>Regular maintenance to keep your system running efficiently</p>
+            </div>
+            <div class="service-card">
+                <h3>Repairs & Troubleshooting</h3>
+                <p>Fast diagnosis and repair of heating and cooling issues</p>
+            </div>
+            <div class="service-card">
+                <h3>System Upgrades</h3>
+                <p>Modernise your HVAC system for better efficiency and comfort</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-img"></div>
+            <div>
+                <div class="about-eyebrow">About Shannons HVAC</div>
+                <h2>Your Trusted Climate Control Partner</h2>
+                <p>Shannons HVAC Limited is Alexandra's premier heating, cooling, and ventilation specialist. We've built our reputation on reliable service, expert installation, and fair pricing.</p>
+                <p>Whether you need a new system installed or your existing unit serviced, our team is ready to help.</p>
+                <ul class="checklist">
+                    <li>Locally owned and operated in Alexandra</li>
+                    <li>Clear, upfront quotes</li>
+                    <li>Workmanship guaranteed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2>Meet the Team</h2>
+        <div class="team-badge">Example Team</div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar">SH</div>
+                <h3>Owner / Lead Technician</h3>
+                <p>15+ years HVAC experience</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">MJ</div>
+                <h3>Senior Technician</h3>
+                <p>System installation & service</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">RA</div>
+                <h3>Service Technician</h3>
+                <p>Maintenance & repairs</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>What Clients Say</h2>
+        <div class="reviews-badge">Example Reviews</div>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0.5rem 0;color:#666">Professional installation, clean work, great communication throughout.</p>
+                <div class="review-author">Robert M, Alexandra</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0.5rem 0;color:#666">Quick response to our heating issue. Fixed it same day and fair price.</p>
+                <div class="review-author">Jennifer T, Clyde</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin:0.5rem 0;color:#666">Our new system is running perfectly. Highly recommend for any HVAC work.</p>
+                <div class="review-author">David L, Roxburgh</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="funnel">
+        <h3>Happy with our service?</h3>
+        <p>Share your experience</p>
+        <a href="review.html">Leave a Review</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div>
+                <h2>Get in Touch</h2>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+64274446761" style="color:var(--accent)">+64 27 444 6761</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>Alexandra, Southland</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Service Area</h3>
+                    <p>Alexandra, Clyde, Roxburgh & surrounds</p>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formsubmit.co/shannonshvac@co.nz" method="POST">
+                <label>Name</label>
+                <input type="text" name="name" required>
+                <label>Email</label>
+                <input type="email" name="email" required>
+                <label>Tell us about your project</label>
+                <textarea name="message" rows="5" required></textarea>
+                <input type="hidden" name="_subject" value="New HVAC Inquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit">Get a Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="review.html">Leave Review</a>
+        <p>&copy; 2026 Shannons HVAC Limited, Alexandra. All rights reserved.</p>
+    </footer>
+</body>
+</html>
