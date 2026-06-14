@@ -1,237 +1,488 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shannons HVAC Limited | Heating, Cooling & Ventilation, Alexandra</title>
-    <style>
-        * {margin:0;padding:0;box-sizing:border-box}
-        :root {--accent:#f97316;--dark:#1a1a1a;--light:#f5f5f5}
-        body {font-family:'Poppins',sans-serif;color:#333;line-height:1.6}
-        nav {position:sticky;top:0;background:var(--dark);color:white;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100}
-        nav .logo {font-weight:700;letter-spacing:1px;font-size:1.1rem}
-        nav .accent {color:var(--accent)}
-        nav a {color:white;text-decoration:none;margin:0 1rem;transition:color 0.3s}
-        nav a:hover {color:var(--accent)}
-        .hero {background:linear-gradient(135deg,#1a1a1a,#2d2d2d);color:white;padding:6rem 2rem;text-align:center;position:relative;overflow:hidden;animation:fadeIn 0.6s ease-out}
-        .hero::before {content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&h=1200&fit=crop');opacity:0.2;background-size:cover}
-        .hero-content {position:relative;z-index:1;max-width:700px;margin:0 auto}
-        .hero h1 {font-size:3rem;margin-bottom:1rem;letter-spacing:1px}
-        .hero p {font-size:1.1rem;margin-bottom:2rem}
-        .cta {background:var(--accent);color:white;padding:1rem 2.5rem;text-decoration:none;display:inline-block;font-weight:700;transition:all 0.3s;border-radius:4px}
-        .cta:hover {background:#ea580c;transform:translateY(-2px)}
-        .trust {background:var(--dark);color:white;padding:3rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
-        .trust h3 {color:var(--accent);margin-bottom:0.5rem}
-        .services {padding:5rem 2rem;background:white}
-        .services h2 {text-align:center;font-size:2.5rem;margin-bottom:3rem;letter-spacing:1px}
-        .service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
-        .service-card {background:var(--light);padding:2rem;border-left:4px solid var(--accent);transition:all 0.3s}
-        .service-card:hover {transform:translateY(-5px);box-shadow:0 10px 30px rgba(249,115,22,0.15)}
-        .service-card h3 {color:var(--accent);margin-bottom:0.5rem}
-        .about {padding:5rem 2rem;background:var(--light)}
-        .about-container {display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto;align-items:center}
-        .about-img {height:400px;background:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=600&fit=crop') center/cover;border:4px solid var(--accent)}
-        .about h2 {font-size:2rem;margin-bottom:1rem;letter-spacing:1px}
-        .about-eyebrow {color:var(--accent);text-transform:uppercase;font-weight:700;font-size:0.85rem;letter-spacing:2px;margin-bottom:0.5rem}
-        .about p {margin-bottom:1rem;color:#666}
-        .checklist {list-style:none;margin-top:1.5rem}
-        .checklist li {padding:0.5rem 0 0.5rem 1.5rem;position:relative}
-        .checklist li::before {content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
-        .team {padding:5rem 2rem;background:white}
-        .team h2 {text-align:center;font-size:2rem;margin-bottom:0.5rem;letter-spacing:1px}
-        .team-badge {text-align:center;color:var(--accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-weight:700}
-        .team-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;max-width:900px;margin:0 auto}
-        .team-card {text-align:center}
-        .avatar {width:100px;height:100px;background:var(--dark);border:4px solid var(--accent);border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.5rem;font-weight:700}
-        .team-card h3 {margin-bottom:0.3rem;font-size:1rem}
-        .team-card p {font-size:0.9rem;color:#666}
-        .reviews {padding:5rem 2rem;background:var(--light)}
-        .reviews h2 {text-align:center;font-size:2rem;margin-bottom:0.5rem;letter-spacing:1px}
-        .reviews-badge {text-align:center;color:var(--accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-weight:700}
-        .review-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
-        .review-card {background:white;padding:1.5rem;border-left:4px solid var(--accent)}
-        .stars {color:var(--accent);margin-bottom:0.5rem}
-        .review-author {font-weight:700;font-size:0.9rem}
-        .funnel {background:var(--accent);color:white;padding:3rem 2rem;text-align:center}
-        .funnel a {background:white;color:var(--accent);padding:0.8rem 2rem;text-decoration:none;display:inline-block;font-weight:700;margin-top:1rem;transition:all 0.3s}
-        .funnel a:hover {transform:scale(1.05)}
-        .contact {padding:5rem 2rem;background:white}
-        .contact-container {display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
-        .contact h2 {font-size:2rem;margin-bottom:2rem;letter-spacing:1px}
-        .contact-item {margin-bottom:1.5rem}
-        .contact-item h3 {color:var(--accent);margin-bottom:0.3rem}
-        .contact-form {display:flex;flex-direction:column}
-        .contact-form label {font-weight:700;margin:1rem 0 0.3rem;font-size:0.9rem}
-        .contact-form input,.contact-form textarea {padding:0.8rem;border:1px solid #ddd;font-family:'Poppins',sans-serif;border-radius:4px}
-        .contact-form input:focus,.contact-form textarea:focus {outline:none;border-color:var(--accent)}
-        .contact-form button {margin-top:1.5rem;padding:0.8rem 2rem;background:var(--accent);color:white;border:none;font-weight:700;cursor:pointer;transition:all 0.3s}
-        .contact-form button:hover {background:#ea580c;transform:translateY(-2px)}
-        footer {background:var(--dark);color:white;padding:2rem;text-align:center;border-top:4px solid var(--accent)}
-        footer a {color:var(--accent);text-decoration:none;margin:0 1rem;transition:color 0.3s}
-        footer a:hover {color:white}
-        @keyframes fadeIn {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-        @media(max-width:768px) {.about-container{grid-template-columns:1fr}.contact-container{grid-template-columns:1fr}.hero h1{font-size:2rem}}
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shannons HVAC Limited | Heating, Cooling &amp; Ventilation, Alexandra</title>
+<meta name="description" content="Heat pump installation, servicing, home ventilation and air conditioning across Alexandra and Central Otago. Honest quotes, tidy installs — call Shannon.">
+<meta name="theme-color" content="#16181b">
+<meta property="og:title" content="Shannons HVAC Limited | Heating, Cooling & Ventilation, Alexandra">
+<meta property="og:description" content="Heat pumps and ventilation built for a Central Otago winter. Servicing, installs and repairs across Alexandra, Clyde and Cromwell.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=630&fit=crop&q=80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2316181b'/%3E%3Ctext x='50' y='68' font-family='Arial Black,Arial' font-size='52' font-weight='900' fill='%23FF5A1F' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --accent:#FF5A1F;
+  --accent-d:#E8410B;
+  --ink:#16181b;
+  --ink-2:#1e2125;
+  --bone:#f3f0ec;
+  --white:#ffffff;
+  --grey:#5b6066;
+  --line:rgba(0,0,0,.10);
+  --radius:6px;
+  --maxw:1180px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',system-ui,sans-serif;color:#23272c;line-height:1.65;background:var(--white);-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;line-height:1.02;letter-spacing:.01em;font-weight:700}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Public Sans';text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;font-weight:700;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.95rem 1.6rem;border-radius:var(--radius);font-size:.95rem;transition:transform .18s ease,background .18s ease,color .18s}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-d);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+section{position:relative}
+.sec{padding:96px 0}
+.sec-bone{background:var(--bone)}
+.sec-white{background:var(--white)}
+.shead{max-width:680px;margin-bottom:54px}
+.shead h2{font-size:clamp(2.1rem,5vw,3.3rem);margin:.5rem 0 .6rem}
+.shead p{color:var(--grey);font-size:1.05rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:60;background:rgba(22,24,27,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.28rem}
+.logo .mark{width:34px;height:34px;border-radius:8px;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.2rem}
+.logo small{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:#d6d9dd;text-decoration:none;font-weight:500;font-size:.95rem;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-call{display:inline-flex;align-items:center;gap:.45rem;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:.6rem 1.1rem;border-radius:var(--radius);font-size:.92rem}
+.nav-call:hover{background:var(--accent-d)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--ink);overflow:hidden}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease-in-out;filter:saturate(.82) contrast(1.05)}
+.hero-slides .slide.on{opacity:1}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,24,27,.62),rgba(22,24,27,.52) 45%,rgba(22,24,27,.78));}
+.hero-in{position:relative;z-index:2;color:#fff;padding:120px 0 90px;max-width:760px}
+.hero h1{font-size:clamp(2.7rem,7vw,5.1rem);margin:1rem 0 1.1rem;font-weight:800}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:1.18rem;color:#e4e6e9;max-width:560px;margin-bottom:2rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-meta{margin-top:2.4rem;display:flex;gap:2rem;flex-wrap:wrap;color:#c7cbcf;font-size:.9rem}
+.hero-meta b{color:#fff;font-family:'Saira Condensed';font-size:1.5rem;display:block;font-weight:700}
+
+/* TRUST */
+.trust{background:var(--ink-2);color:#fff;padding:0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.trust-item{padding:38px 30px;display:flex;gap:1rem;align-items:flex-start;border-right:1px solid rgba(255,255,255,.08)}
+.trust-item:last-child{border-right:0}
+.trust-ic{flex:0 0 auto;width:44px;height:44px;border-radius:10px;background:rgba(255,90,31,.14);color:var(--accent);display:grid;place-items:center}
+.trust-ic svg{width:24px;height:24px}
+.trust-item h3{font-size:1.18rem;color:#fff;margin-bottom:.15rem}
+.trust-item p{color:#aeb3b8;font-size:.92rem;line-height:1.5}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(22,24,27,.10);border-color:transparent}
+.svc-ic{width:50px;height:50px;border-radius:12px;background:var(--ink);color:var(--accent);display:grid;place-items:center;margin-bottom:18px}
+.svc-ic svg{width:26px;height:26px}
+.svc h3{font-size:1.32rem;margin-bottom:.5rem}
+.svc p{color:var(--grey);font-size:.96rem}
+.svc-tag{display:inline-block;margin-top:14px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
+.about-media{position:relative}
+.about-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);filter:saturate(.82) contrast(1.05)}
+.about-tag{position:absolute;left:-1px;bottom:-1px;background:var(--accent);color:#fff;font-family:'Saira Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:14px 22px;border-radius:0 var(--radius) 0 var(--radius);font-size:1.05rem}
+.about h2{font-size:clamp(2rem,4.6vw,3rem);margin:.5rem 0 1rem}
+.about p{color:var(--grey);margin-bottom:1rem}
+.check{list-style:none;margin-top:1.4rem;display:grid;gap:.85rem}
+.check li{display:flex;gap:.8rem;align-items:flex-start;font-weight:500;color:#23272c}
+.check li svg{flex:0 0 auto;width:24px;height:24px;color:var(--accent);margin-top:1px}
+
+/* CREW */
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.crew{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;text-align:center}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--ink);color:var(--accent);display:grid;place-items:center;margin:0 auto 18px;font-family:'Saira Condensed';font-weight:700;font-size:1.7rem;box-shadow:0 0 0 3px rgba(255,90,31,.35)}
+.crew h3{font-size:1.3rem;margin-bottom:.2rem}
+.crew .role{color:var(--accent);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.7rem}
+.crew p{color:var(--grey);font-size:.93rem}
+.badge{display:inline-block;background:rgba(255,90,31,.12);color:var(--accent-d);font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .8rem;border-radius:40px;margin-bottom:1rem}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column}
+.stars{color:var(--accent);letter-spacing:2px;margin-bottom:14px;font-size:1.05rem}
+.rev p{font-size:1.02rem;color:#2b2f34;margin-bottom:18px;flex:1}
+.rev .who{font-weight:700;font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem}
+.rev .where{color:var(--grey);font-size:.86rem}
+
+/* FUNNEL */
+.funnel{background:var(--ink);color:#fff;text-align:center;padding:78px 0}
+.funnel .stars{font-size:1.7rem;justify-content:center;display:block;margin-bottom:.6rem}
+.funnel h2{font-size:clamp(1.9rem,4.5vw,2.9rem);margin-bottom:.7rem}
+.funnel p{color:#b9bdc2;max-width:520px;margin:0 auto 1.8rem}
+
+/* CONTACT */
+.contact{background:var(--ink);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.contact h2{font-size:clamp(2rem,4.6vw,3rem);margin:.4rem 0 1rem;color:#fff}
+.contact .lead{color:#b9bdc2;margin-bottom:2rem;max-width:420px}
+.cinfo{display:grid;gap:1.1rem}
+.cinfo a,.cinfo div{display:flex;gap:1rem;align-items:center;color:#e7e9eb;text-decoration:none;font-size:1.02rem}
+.cinfo .ic{width:46px;height:46px;border-radius:10px;background:rgba(255,90,31,.14);color:var(--accent);display:grid;place-items:center;flex:0 0 auto}
+.cinfo small{display:block;color:#8d9298;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}
+.form{background:#fff;border-radius:10px;padding:32px}
+.form h3{font-family:'Saira Condensed';text-transform:uppercase;color:var(--ink);font-size:1.5rem;margin-bottom:.3rem}
+.form .fnote{color:var(--grey);font-size:.88rem;margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:600;color:#2b2f34;margin-bottom:.35rem}
+.field input,.field textarea,.field select{width:100%;padding:.8rem .9rem;border:1px solid #d6d9dd;border-radius:var(--radius);font:inherit;font-size:.95rem;color:#23272c;background:#fafafa}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent);background:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form button{width:100%;margin-top:6px}
+
+/* FOOTER */
+footer{background:#0f1113;color:#9da2a8;padding:54px 0 30px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand{color:#fff;font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;font-size:1.3rem;letter-spacing:.04em}
+.foot-brand small{color:var(--accent)}
+.foot-col h4{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.9rem}
+.foot-col a{display:block;color:#9da2a8;text-decoration:none;margin-bottom:.5rem;font-size:.94rem}
+.foot-col a:hover{color:var(--accent)}
+.foot-bot{padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.84rem}
+
+@media(max-width:880px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .trust-grid,.svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr}
+  .trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .sec{padding:70px 0}
+  .hero-in{padding:90px 0 70px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-slides .slide{transition:none}
+  .btn,.svc,.nav-call{transition:none}
+}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="logo">SHANNONS <span class="accent">HVAC</span></div>
-        <div style="display:flex;gap:1.5rem;align-items:center">
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="tel:+64274446761" class="cta" style="margin:0">Call Now</a>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Climate Control Solutions</h1>
-            <p>Professional HVAC services for residential and commercial properties</p>
-            <a href="tel:+64274446761" class="cta">Call +64 27 444 6761</a>
-        </div>
-    </section>
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="logo"><span class="mark">S</span>Shannons<small>HVAC</small></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#crew">Crew</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+64274446761" class="nav-call">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        027 444 6761
+      </a>
+    </div>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'">☰</button>
+  </div>
+</nav>
 
-    <section class="trust" style="background:var(--dark);color:white;padding:3rem 2rem">
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-slides" id="slides" aria-hidden="true">
+    <div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1900&q=80&fit=crop')"></div>
+    <div class="slide" data-src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1900&q=80&fit=crop"></div>
+    <div class="slide" data-src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1900&q=80&fit=crop"></div>
+    <div class="slide" data-src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1900&q=80&fit=crop"></div>
+  </div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">Alexandra &amp; Central Otago · Heating · Cooling · Ventilation</span>
+    <h1>Heat pumps and ventilation built for a <em>Central Otago winter</em>.</h1>
+    <p class="hero-sub">Shannons HVAC installs, services and repairs heat pumps, home ventilation and air conditioning across Alexandra, Clyde and Cromwell — sized right, fitted tidy, and quoted up front.</p>
+    <div class="hero-cta">
+      <a href="tel:+64274446761" class="btn btn-accent">Call Shannon — 027 444 6761</a>
+      <a href="#contact" class="btn btn-ghost">Get a quote</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>Local</b>Alexandra based</div>
+      <div><b>Tidy</b>Clean, careful installs</div>
+      <div><b>Upfront</b>Clear written quotes</div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+      <div><h3>Central Otago local</h3><p>Based in Alexandra and on the road daily through Clyde, Cromwell and the Roxburgh valley.</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div><h3>On time, tidy site</h3><p>We turn up when we say, lay drop sheets, and leave the place cleaner than we found it.</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></div>
+      <div><h3>Honest, written quotes</h3><p>One clear price before we start — no surprises added once the job's underway.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec sec-white" id="services">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What we do</span>
+      <h2>Keeping Central Otago homes warm and dry</h2>
+      <p>From a single bedroom heat pump to whole-home ventilation, we size and fit the system that actually suits your house and your power bill.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="9" rx="2"/><path d="M5 18h2M11 18h2M17 18h2M6 10h12"/></svg></div>
+        <h3>Heat pump installation</h3>
+        <p>High-wall, floor-console and multi-room heat pumps supplied and fitted, sized to heat the room properly without running flat out.</p>
+        <span class="svc-tag">Supply &amp; install</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 1.5 1.5 6-6a4 4 0 0 0 5.4-5.4l-2 2-2-2 2-2z"/></svg></div>
+        <h3>Heat pump servicing</h3>
+        <p>Filter cleans, coil checks and a full health service so your unit runs efficient through winter and stays mould-free.</p>
+        <span class="svc-tag">Annual service</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-4 4 8 2-4h6"/></svg></div>
+        <h3>Home ventilation systems</h3>
+        <p>Positive-pressure and balanced ventilation to clear condensation off the windows and keep damp, stale air moving out.</p>
+        <span class="svc-tag">Dryer, healthier home</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Air conditioning &amp; cooling</h3>
+        <p>Reverse-cycle cooling for those dry Alexandra summers — one system that takes the edge off both the heat and the frost.</p>
+        <span class="svc-tag">Year-round comfort</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v4M9 17v4M5 7h8M5 17h8M17 5l-2 2 2 2M17 15l-2 2 2 2"/></svg></div>
+        <h3>Repairs &amp; fault finding</h3>
+        <p>Unit not heating, dripping or throwing an error code? We diagnose the fault and get it sorted, most makes and models.</p>
+        <span class="svc-tag">Most brands</span>
+      </div>
+      <div class="svc">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-6 9 6v10a1 1 0 0 1-1 1h-4v-7H8v7H4a1 1 0 0 1-1-1V9z"/></svg></div>
+        <h3>New build &amp; renovations</h3>
+        <p>Working with your builder to plan heating and ventilation early, so it's fitted neatly into the design — not bolted on after.</p>
+        <span class="svc-tag">Builder friendly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec sec-bone" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=80&fit=crop" alt="Heating and ventilation technician at work" loading="lazy" width="900" height="675">
+      <span class="about-tag">Alexandra · Central Otago</span>
+    </div>
+    <div class="about">
+      <span class="eyebrow">About Shannons HVAC</span>
+      <h2>The local who actually picks up the phone</h2>
+      <p>Shannons HVAC is a Central Otago heating and cooling business built on doing the job properly the first time. We live where you live, so we know what a hard frost and a 35-degree afternoon both ask of a heat pump.</p>
+      <p>You deal with the person doing the work — straight advice on what your home actually needs, a clear written price, and a tidy install you won't have to think about again for years.</p>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Locally owned and operated in Alexandra</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Clear written quotes before any work starts</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 6"/></svg>Workmanship guaranteed, tidy site every time</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CREW -->
+<section class="sec sec-white" id="crew">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Meet the crew</span>
+      <h2>Who turns up at your door</h2>
+      <p>A small Central Otago team, so you get the same faces from quote to clean-up.</p>
+    </div>
+    <span class="badge">Example team</span>
+    <div class="crew-grid">
+      <div class="crew">
+        <div class="avatar">S</div>
+        <h3>Shannon</h3>
+        <div class="role">Owner / Lead Installer</div>
+        <p>Runs every quote and install himself, so the advice you get is the advice on the job. Your direct line for the whole project.</p>
+      </div>
+      <div class="crew">
+        <div class="avatar">ST</div>
+        <h3>Service Tech</h3>
+        <div class="role">Servicing &amp; Repairs</div>
+        <p>Keeps existing systems running sweet — filter cleans, fault finding and the annual health checks that stop winter callouts.</p>
+      </div>
+      <div class="crew">
+        <div class="avatar">B</div>
+        <h3>Bookings</h3>
+        <div class="role">Office &amp; Scheduling</div>
+        <p>Answers the phone, sorts your quote and books a time that suits, then keeps you posted on when we'll arrive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec sec-bone" id="reviews">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What locals say</span>
+      <h2>Warm houses across Central Otago</h2>
+    </div>
+    <span class="badge">Example reviews</span>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>“Shannon sized up the lounge, told us straight which model would actually heat it, and had it in within the week. House is finally warm of a morning. No mess left behind.”</p>
+        <div class="who">Megan R.</div>
+        <div class="where">Alexandra</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>“Old unit packed it in mid-July. Rang Shannons, got an honest answer and a fair price, sorted the next day. Can't fault the service — proper local outfit.”</p>
+        <div class="who">Dave T.</div>
+        <div class="where">Clyde</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>“Put a ventilation system through the whole house and the condensation on the windows is just gone. Tidy work, explained everything, turned up when he said he would.”</p>
+        <div class="who">Priya N.</div>
+        <div class="where">Cromwell</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW FUNNEL -->
+<section class="funnel">
+  <div class="wrap">
+    <span class="stars">★★★★★</span>
+    <h2>Happy with our work?</h2>
+    <p>A quick review helps other Central Otago locals find a heating crew they can trust. It only takes a minute.</p>
+    <a href="review.html" class="btn btn-accent">Leave us a review</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2>Get a quote for your place</h2>
+      <p class="lead">Tell us a bit about the job — a new heat pump, a service, ventilation or a repair — and Shannon will get back to you with a price and a time.</p>
+      <div class="cinfo">
+        <a href="tel:+64274446761">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+          <span><small>Call or text Shannon</small>027 444 6761</span>
+        </a>
+        <a href="mailto:hello@shannonshvac.co.nz">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><small>Email</small>hello@shannonshvac.co.nz</span>
+        </a>
         <div>
-            <h3>Expert Installation</h3>
-            <p>Certified HVAC technicians with years of experience</p>
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><small>Service area</small>Alexandra &amp; Central Otago</span>
         </div>
-        <div>
-            <h3>Fast Response</h3>
-            <p>Quick turnaround on service calls and maintenance</p>
-        </div>
-        <div>
-            <h3>Fair Pricing</h3>
-            <p>Transparent quotes with no hidden charges</p>
-        </div>
-    </section>
+      </div>
+    </div>
+    <form class="form" action="https://formsubmit.co/hello@shannonshvac.co.nz" method="POST">
+      <h3>Request a quote</h3>
+      <p class="fnote">We'll reply with a price and a time that suits you.</p>
+      <input type="hidden" name="_subject" value="New quote request — Shannons HVAC website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="row2">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="Mobile number"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.co.nz"></div>
+        <div class="field"><label for="suburb">Town / suburb</label><input id="suburb" name="suburb" placeholder="Alexandra, Clyde, Cromwell…"></div>
+      </div>
+      <div class="field"><label for="job">What do you need?</label>
+        <select id="job" name="job_type">
+          <option>New heat pump quote</option>
+          <option>Heat pump service or clean</option>
+          <option>Home ventilation</option>
+          <option>Air conditioning / cooling</option>
+          <option>Repair or fault</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">Tell us about the job</label><textarea id="msg" name="message" rows="3" placeholder="e.g. Want to heat the lounge and one bedroom in a 1970s house in Alexandra"></textarea></div>
+      <button type="submit" class="btn btn-accent">Send enquiry</button>
+    </form>
+  </div>
+</section>
 
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>System Installation</h3>
-                <p>Complete HVAC system design and installation for homes and businesses</p>
-            </div>
-            <div class="service-card">
-                <h3>Maintenance & Service</h3>
-                <p>Regular maintenance to keep your system running efficiently</p>
-            </div>
-            <div class="service-card">
-                <h3>Repairs & Troubleshooting</h3>
-                <p>Fast diagnosis and repair of heating and cooling issues</p>
-            </div>
-            <div class="service-card">
-                <h3>System Upgrades</h3>
-                <p>Modernise your HVAC system for better efficiency and comfort</p>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Shannons<small>HVAC</small></div>
+        <p style="margin-top:.6rem;max-width:300px;font-size:.92rem">Heating, cooling and ventilation for Alexandra and Central Otago. Heat pumps, servicing, ventilation and repairs.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Heat pump installation</a>
+        <a href="#services">Servicing &amp; repairs</a>
+        <a href="#services">Home ventilation</a>
+        <a href="#services">Air conditioning</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="review.html">Leave a review</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="tel:+64274446761">027 444 6761</a>
+        <a href="mailto:hello@shannonshvac.co.nz">Email us</a>
+        <a href="#contact">Request a quote</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> Shannons HVAC Limited · Alexandra, Central Otago</span>
+      <span><a href="terms.html" style="color:inherit">Terms</a> · <a href="privacy.html" style="color:inherit">Privacy</a> · <a href="review.html" style="color:inherit">Leave a review</a></span>
+    </div>
+  </div>
+</footer>
 
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-img"></div>
-            <div>
-                <div class="about-eyebrow">About Shannons HVAC</div>
-                <h2>Your Trusted Climate Control Partner</h2>
-                <p>Shannons HVAC Limited is Alexandra's premier heating, cooling, and ventilation specialist. We've built our reputation on reliable service, expert installation, and fair pricing.</p>
-                <p>Whether you need a new system installed or your existing unit serviced, our team is ready to help.</p>
-                <ul class="checklist">
-                    <li>Locally owned and operated in Alexandra</li>
-                    <li>Clear, upfront quotes</li>
-                    <li>Workmanship guaranteed</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="team">
-        <h2>Meet the Team</h2>
-        <div class="team-badge">Example Team</div>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="avatar">SH</div>
-                <h3>Owner / Lead Technician</h3>
-                <p>15+ years HVAC experience</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar">MJ</div>
-                <h3>Senior Technician</h3>
-                <p>System installation & service</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar">RA</div>
-                <h3>Service Technician</h3>
-                <p>Maintenance & repairs</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="reviews">
-        <h2>What Clients Say</h2>
-        <div class="reviews-badge">Example Reviews</div>
-        <div class="review-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin:0.5rem 0;color:#666">Professional installation, clean work, great communication throughout.</p>
-                <div class="review-author">Robert M, Alexandra</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin:0.5rem 0;color:#666">Quick response to our heating issue. Fixed it same day and fair price.</p>
-                <div class="review-author">Jennifer T, Clyde</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin:0.5rem 0;color:#666">Our new system is running perfectly. Highly recommend for any HVAC work.</p>
-                <div class="review-author">David L, Roxburgh</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="funnel">
-        <h3>Happy with our service?</h3>
-        <p>Share your experience</p>
-        <a href="review.html">Leave a Review</a>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div>
-                <h2>Get in Touch</h2>
-                <div class="contact-item">
-                    <h3>Phone</h3>
-                    <p><a href="tel:+64274446761" style="color:var(--accent)">+64 27 444 6761</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>Location</h3>
-                    <p>Alexandra, Southland</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Service Area</h3>
-                    <p>Alexandra, Clyde, Roxburgh & surrounds</p>
-                </div>
-            </div>
-            <form class="contact-form" action="https://formsubmit.co/shannonshvac@co.nz" method="POST">
-                <label>Name</label>
-                <input type="text" name="name" required>
-                <label>Email</label>
-                <input type="email" name="email" required>
-                <label>Tell us about your project</label>
-                <textarea name="message" rows="5" required></textarea>
-                <input type="hidden" name="_subject" value="New HVAC Inquiry">
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit">Get a Quote</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="review.html">Leave Review</a>
-        <p>&copy; 2026 Shannons HVAC Limited, Alexandra. All rights reserved.</p>
-    </footer>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slides=[].slice.call(document.querySelectorAll('#slides .slide'));
+  slides.forEach(function(s){ if(s.dataset.src){ var img=new Image(); img.src=s.dataset.src; img.onload=function(){ s.style.backgroundImage="url('"+s.dataset.src+"')"; }; }});
+  if(reduce||slides.length<2) return;
+  var i=0;
+  setInterval(function(){
+    slides[i].classList.remove('on');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('on');
+  },6000);
+})();
+</script>
 </body>
 </html>
