@@ -3,47 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Feedback | Shannons HVAC Limited</title>
+<title>Share Your Feedback | Shannons HVAC Limited</title>
+<meta name="description" content="Tell us where we can do better — private feedback for Shannons HVAC, Alexandra.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2316181b'/%3E%3Ctext x='50' y='68' font-family='Arial Black,Arial' font-size='52' font-weight='900' fill='%23FF5A1F' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='14' fill='%230e1216'/%3E%3Ctext x='50' y='73' font-size='62' text-anchor='middle' fill='%2316b4c6' font-family='Arial' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Public Sans',sans-serif;background:#16181b;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:#1e2125;border:1px solid rgba(255,255,255,.09);border-radius:14px;max-width:500px;width:100%;padding:44px 38px}
-.brand{font-family:'Saira Condensed';font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.3rem;margin-bottom:14px}
-.brand small{color:#FF5A1F}
-h1{font-family:'Saira Condensed';text-transform:uppercase;font-weight:700;font-size:1.9rem;margin-bottom:6px}
-p.sub{color:#aeb3b8;font-size:.95rem;margin-bottom:22px}
-label{display:block;font-weight:600;font-size:.84rem;margin-bottom:.35rem}
-input,textarea{width:100%;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.14);border-radius:6px;background:#16181b;color:#fff;font:inherit;font-size:.95rem;margin-bottom:14px}
-input:focus,textarea:focus{outline:none;border-color:#FF5A1F}
-button{width:100%;padding:.9rem;background:#FF5A1F;color:#fff;border:0;border-radius:6px;font-weight:700;font-size:.98rem;cursor:pointer}
-button:hover{background:#E8410B}
-.back{display:inline-block;margin-top:18px;color:#8d9298;text-decoration:none;font-size:.88rem}
-.back:hover{color:#fff}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="card">
-  <div class="brand">Shannons<small>HVAC</small></div>
-  <h1>Tell us what happened</h1>
-  <p class="sub">Your feedback comes straight to Shannon — we'll make it right.</p>
-  <form action="https://formsubmit.co/hello@shannonshvac.co.nz" method="POST">
-    <label for="name">Name</label>
-    <input id="name" type="text" name="name" required>
-    <label for="email">Email or phone</label>
-    <input id="email" type="text" name="email" required>
-    <label for="message">What could we have done better?</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-    <input type="hidden" name="_subject" value="Private feedback — Shannons HVAC website">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <button type="submit">Send feedback</button>
-  </form>
-  <a href="index.html" class="back">← Back to site</a>
+
+<nav class="nav scrolled" id="nav">
+  <a class="brand" href="index.html"><span class="mark">S</span>SHANNONS HVAC<small>Heating · Cooling · Alexandra</small></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="nav-phone" href="tel:+64274446761">027 444 6761</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+</nav>
+
+<div class="subpage">
+  <div class="private-wrap">
+    <div class="form" id="formCard">
+      <span class="eyebrow">We're listening</span>
+      <h3 style="margin:12px 0 4px">Tell us how we can do better</h3>
+      <p class="sub">Sorry we didn't quite hit the mark. This goes straight to Shannon — we read every message and we'll put things right where we can.</p>
+      <form action="https://formsubmit.co/shannon@shannonshvac.co.nz" method="POST" id="pform">
+        <input type="hidden" name="_subject" value="Private feedback — Shannons HVAC website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="#thanks">
+        <div class="frow">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" name="Name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" name="Email" required></div>
+        </div>
+        <div class="field">
+          <label for="rating">Your rating</label>
+          <input id="rating" type="text" name="Rating" readonly>
+        </div>
+        <div class="field"><label for="feedback">Your feedback</label><textarea id="feedback" name="Feedback" placeholder="What happened, and how can we put it right?" required></textarea></div>
+        <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center">Send feedback</button>
+      </form>
+    </div>
+
+    <div class="success" id="success">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2>Thank you</h2>
+      <p>Your feedback has gone through to Shannon. We appreciate you taking the time, and we'll follow up if there's anything to sort out.</p>
+      <p style="margin-top:18px"><a class="btn btn--dark" href="index.html">Back to home</a></p>
+    </div>
+  </div>
 </div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var r = params.get('rating');
+  var ratingField = document.getElementById('rating');
+  if (r && /^[1-5]$/.test(r)) {
+    ratingField.value = r + ' / 5 ' + '★'.repeat(+r);
+  } else {
+    ratingField.value = 'Not specified';
+  }
+  var form = document.getElementById('pform');
+  form.addEventListener('submit', function () {
+    setTimeout(function () {
+      document.getElementById('formCard').style.display = 'none';
+      document.getElementById('success').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 400);
+  });
+  if (window.location.hash === '#thanks') {
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('success').classList.add('show');
+  }
+</script>
+<script src="main.js"></script>
 </body>
 </html>
