@@ -85,7 +85,8 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover{color:var(--blue)}
 .nav-phone{display:inline-flex !important;align-items:center;gap:8px;border:1.5px solid var(--red);color:var(--red) !important;padding:9px 16px;border-radius:var(--radius)}
 .nav-phone:hover{background:var(--red);color:#fff !important}
-.nav-toggle{display:none;background:none;border:none;color:var(--navy-ink);font-size:1.5rem;cursor:pointer}
+.nav-toggle{display:none;background:none;border:none;color:var(--navy-ink);cursor:pointer;padding:6px;line-height:0}
+.nav-toggle svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:min(86svh,740px);display:flex;align-items:flex-end;background:var(--ink-deep);overflow:hidden}
@@ -170,22 +171,6 @@ section{padding:clamp(64px,9vw,108px) 0}
 .crew-card p{color:var(--muted);font-size:.92rem}
 .badge{display:inline-block;font-family:"Be Vietnam Pro",sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:5px 12px;margin-top:18px}
 
-/* ---------- reviews ---------- */
-.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.rev-card{background:var(--light);border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px}
-.rev-stars{color:var(--accent);letter-spacing:3px;font-size:1.05rem;margin-bottom:14px}
-.rev-card p{font-size:1.04rem;color:var(--text);margin-bottom:18px}
-.rev-who{font-family:"Teko",sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.03em;text-transform:uppercase;line-height:1}
-.rev-who span{display:block;font-family:"Be Vietnam Pro",sans-serif;font-weight:400;font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:3px}
-
-/* ---------- review funnel banner ---------- */
-.funnel{background:var(--ink-deep);color:#fff;text-align:center;position:relative;overflow:hidden}
-.funnel .hero-grid{opacity:.1}
-.funnel-inner{position:relative;z-index:2}
-.funnel .stars{color:var(--accent);font-size:1.7rem;letter-spacing:6px;margin-bottom:16px}
-.funnel h2{font-size:clamp(2.2rem,4.6vw,3.4rem);color:#fff;margin-bottom:12px;text-transform:uppercase;font-weight:600;line-height:.98}
-.funnel p{color:var(--muted-dark);max-width:50ch;margin:0 auto 26px}
-
 /* ---------- contact ---------- */
 .contact-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,5vw,64px)}
 .contact-info h2{color:#fff;font-size:clamp(2.3rem,4.4vw,3.4rem);margin:12px 0 16px;text-transform:uppercase;font-weight:600;line-height:.96}
@@ -226,25 +211,6 @@ section{padding:clamp(64px,9vw,108px) 0}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ---------- review / private standalone pages ---------- */
-.subpage{min-height:100vh;background:var(--ink);display:flex;align-items:center;justify-content:center;padding:120px var(--pad) 60px}
-.review-card{background:var(--light);border-radius:var(--radius);max-width:540px;width:100%;padding:clamp(32px,5vw,52px);text-align:center;border-top:4px solid var(--accent)}
-.review-card .mark{width:54px;height:54px;margin:0 auto 22px;border:2px solid var(--accent);border-radius:4px;display:grid;place-items:center;color:var(--accent);font-family:"Teko",sans-serif;font-weight:600;font-size:1.9rem}
-.review-card h1{font-size:2.4rem;text-transform:uppercase;margin-bottom:10px;font-weight:600;line-height:1}
-.review-card p{color:var(--muted);margin-bottom:24px}
-.star-pick{display:flex;justify-content:center;gap:10px;font-size:2.4rem;cursor:pointer}
-.star-pick .star{color:#cdd5da;transition:color .15s ease,transform .15s ease}
-.star-pick .star:hover{transform:scale(1.12)}
-.star-pick .star.lit{color:var(--accent)}
-.review-note{font-size:.86rem;color:var(--muted);margin-top:22px;margin-bottom:0}
-.private-wrap{max-width:600px;width:100%}
-.success{display:none;background:var(--light);border-radius:var(--radius);padding:clamp(32px,5vw,52px);text-align:center;border-top:4px solid var(--accent)}
-.success.show{display:block}
-.success .tick{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
-.success .tick svg{width:32px;height:32px;stroke:var(--btn-ink);fill:none}
-.success h2{text-transform:uppercase;margin-bottom:10px;font-weight:600;font-size:2rem}
-.success p{color:var(--muted)}
-
 /* ---------- legal pages ---------- */
 .legal{max-width:780px;margin:0 auto;padding:140px var(--pad) 80px}
 .legal h1{font-size:3rem;text-transform:uppercase;margin-bottom:8px;font-weight:600;line-height:1}
@@ -273,7 +239,6 @@ section{padding:clamp(64px,9vw,108px) 0}
   .trust-item{border-right:none;border-bottom:1px solid var(--line-dark)}
   .svc-grid{grid-template-columns:1fr}
   .crew-grid{grid-template-columns:1fr}
-  .rev-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .hero-meta{gap:20px}
 }
@@ -340,7 +305,7 @@ section{padding:clamp(64px,9vw,108px) 0}
 @media(max-width:600px){.model-grid{grid-template-columns:1fr}}
 
 /* ---------- detailed heat pump layout (zig-zag + colour swatches) ---------- */
-.hc-intro{text-align:center;max-width:760px;margin:0 auto 40px}
+.hc-intro{text-align:center;max-width:760px;margin:0 auto 40px;padding:0 var(--pad)}
 .hc-intro h2{font-family:"Be Vietnam Pro",sans-serif;font-weight:700;color:var(--navy-ink);text-transform:none;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;letter-spacing:-.01em;margin:8px 0 14px}
 .hc-intro p{color:#41506a;font-size:1.08rem}
 .hc-banner{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
@@ -445,33 +410,15 @@ section{padding:clamp(64px,9vw,108px) 0}
   .nav-caret{display:none}
 }
 
-/* ---------- review funnel: button inline, not below ---------- */
-.funnel-inner{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;text-align:left}
-.funnel-copy{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.funnel-inner .stars{margin:0}
-.funnel-inner h2{margin:0}
-.btn--sm{padding:10px 18px;font-size:.72rem;letter-spacing:.06em}
-.funnel-review{
-  flex:1;min-width:min(100%,320px);background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:18px 20px;
-}
-.funnel-review p{color:#eaf0ff;font-size:.98rem;margin:8px 0 10px}
-.funnel-review .rev-who{color:#fff;font-weight:600;font-size:.9rem}
-.funnel-review .rev-who span{display:block;color:var(--muted-dark);font-weight:400;font-size:.82rem}
-@media(max-width:700px){
-  .funnel-inner{justify-content:center;text-align:center}
-  .funnel-copy{justify-content:center}
-}
-
-/* ---------- footer address + map ---------- */
-.footer-map{
-  margin-top:34px;border-radius:var(--radius);overflow:hidden;
+/* ---------- contact map + footer address ---------- */
+.contact-map{
+  margin-top:clamp(34px,5vw,52px);border-radius:var(--radius);overflow:hidden;
   border:1px solid var(--line-dark);line-height:0;
 }
-.footer-map iframe{width:100%;height:260px;border:0;display:block;filter:grayscale(.25) contrast(1.02)}
+.contact-map iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.02)}
 .footer-address{color:var(--muted-dark);font-size:.92rem;font-style:normal;line-height:1.55}
 .footer-address b{display:block;color:#fff;font-weight:600}
-@media(max-width:620px){.footer-map iframe{height:210px}}
+@media(max-width:620px){.contact-map iframe{height:230px}}
 
 /* ---------- mobile: drop the long eyebrow line from the hero ---------- */
 @media(max-width:760px){
@@ -485,3 +432,17 @@ section{padding:clamp(64px,9vw,108px) 0}
   padding:clamp(14px,2.4vw,30px);border:1px solid var(--line);
   box-shadow:0 24px 48px -34px rgba(10,28,68,.32);filter:none;
 }
+
+/* ---------- phones: smaller buttons, tighter hero copy ---------- */
+@media(max-width:620px){
+  .btn{padding:11px 17px;font-size:.72rem;gap:7px;letter-spacing:.05em}
+  .hero-cta{gap:8px}
+  .hero-cta .btn{min-height:40px;padding:10px 14px;font-size:.75rem}
+  .contact-btns .btn{padding:13px;font-size:.78rem}
+  .hero h1{font-size:clamp(1.85rem,7.6vw,2.4rem)}
+  .hc-intro h2{font-size:clamp(1.55rem,6.4vw,1.95rem)}
+  .hc-intro p{font-size:1rem}
+}
+
+/* the quote card should hug its content, not stretch to match the column beside it */
+.contact-split .form{align-self:start}

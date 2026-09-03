@@ -49,11 +49,10 @@
     <a href="#electrical">Electrical</a>
     <a href="#faq">FAQ</a>
     <a href="#about">About</a>
-    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
     <a class="nav-phone" href="tel:+64274446761">027 444 6761</a>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -715,33 +714,6 @@
   </div>
 </section>
 
-<!-- ===== REVIEWS + REVIEW FUNNEL ===== -->
-<section class="funnel" id="reviews">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="wrap funnel-inner reveal">
-
-    <!-- ============================================================
-         REAL GOOGLE REVIEWS GO HERE.
-         Uncomment one block per review and paste the wording straight
-         from the Google Business Profile. Nothing invented, nothing
-         paraphrased. The "Leave a review" button sits alongside them.
-
-    <div class="funnel-review">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"PASTE THE REVIEW TEXT HERE"</p>
-      <div class="rev-who">REVIEWER NAME<span>Google review</span></div>
-    </div>
-
-         ============================================================ -->
-
-    <div class="funnel-copy">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <h2>Happy with the warmth?</h2>
-    </div>
-    <a class="btn btn--primary btn--sm" href="review.html">Leave a review</a>
-  </div>
-</section>
-
 <!-- ===== CONTACT ===== -->
 <section class="band-dark" id="contact">
   <div class="wrap contact-split">
@@ -761,6 +733,10 @@
         <div class="cinfo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div><b>Hours</b><span>Mon–Fri, 7:30am–5pm · after-hours by arrangement</span></div>
       </div>
+      <div class="cinfo-row">
+        <div class="cinfo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><b>Find us</b><span>11B Centago Cres, Alexandra 9320</span></div>
+      </div>
     </div>
 
     <div class="form reveal">
@@ -779,6 +755,14 @@
         </a>
       </div>
       <p class="sub" style="margin:16px 0 0;text-align:center">Fast replies during work hours. Urgent? Give us a call.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="contact-map reveal">
+      <iframe
+        src="https://www.google.com/maps?q=11B%20Centago%20Crescent%2C%20Alexandra%209320%2C%20New%20Zealand&amp;z=15&amp;output=embed"
+        title="Shannons HVAC Limited, 11B Centago Crescent, Alexandra"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -804,7 +788,6 @@
       </div>
       <div class="footer-col">
         <h5>More</h5>
-        <a href="review.html">Leave a review</a>
         <a href="terms.html">Terms</a>
         <a href="privacy.html">Privacy</a>
       </div>
@@ -819,12 +802,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-map">
-    <iframe
-      src="https://www.google.com/maps?q=11B%20Centago%20Crescent%2C%20Alexandra%209320%2C%20New%20Zealand&amp;z=15&amp;output=embed"
-      title="Shannons HVAC Limited, 11B Centago Crescent, Alexandra"
-      loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-  </div>
+
   <div class="footer-bot">
     <span>© <span id="yr"></span> Shannons HVAC Limited · Alexandra, Central Otago</span>
     <span>Heat Pumps · Air Conditioning · Ventilation</span>
