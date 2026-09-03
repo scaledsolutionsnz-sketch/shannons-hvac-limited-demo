@@ -48,3 +48,30 @@
     rev.forEach(function (el) { el.classList.add('in'); });
   }
 })();
+
+/* Gmail compose (no literal email in the HTML) */
+(function () {
+  document.querySelectorAll('a[data-gmail]').forEach(function (a) {
+    var to = a.getAttribute('data-user') + '@' + a.getAttribute('data-domain');
+    var su = a.getAttribute('data-su') || '';
+    var body = a.getAttribute('data-body') || '';
+    a.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + su + '&body=' + body;
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+})();
+
+/* Accordions: open the one the URL points at, so the Services drop-down
+   and any shared link land on an open panel rather than a closed heading. */
+(function () {
+  function openTarget() {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === 'DETAILS' && !el.open) {
+      el.open = true;
+      el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
