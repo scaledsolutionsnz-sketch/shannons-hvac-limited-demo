@@ -101,7 +101,7 @@ a{color:inherit;text-decoration:none}
 .hero-grid{position:absolute;inset:0;z-index:1;opacity:.15;
   background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
   background-size:64px 64px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%,transparent);mask-image:linear-gradient(180deg,transparent,#000 40%,transparent)}
-.hero-inner{position:relative;z-index:2;padding:104px var(--pad) 52px;max-width:1410px;margin:0 auto;width:100%}
+.hero-inner{position:relative;z-index:2;padding:104px var(--pad) 52px;max-width:1470px;margin:0 auto;width:100%}
 .hero-eyebrow{text-shadow:0 1px 14px rgba(6,14,34,.9),0 1px 3px rgba(6,14,34,.6);color:#fff;font-family:"Teko",sans-serif;font-weight:600;font-size:.92rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:12px;line-height:1}
 .hero-eyebrow::before{content:"";width:26px;height:2px;background:#F2444F}
 .hero h1{color:#fff;font-size:clamp(2.2rem,5.1vw,3.8rem);margin:14px 0 22px;max-width:20ch;text-transform:uppercase;font-weight:600;text-shadow:0 2px 26px rgba(6,14,34,.72),0 1px 3px rgba(6,14,34,.5)}
