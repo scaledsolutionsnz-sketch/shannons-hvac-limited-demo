@@ -70,7 +70,6 @@
     <h1>Heat pumps and home heating built for <em>Central Otago</em>.</h1>
     <div class="hero-cta">
       <a class="btn btn--primary" href="#contact">Get a quote</a>
-      <a class="btn btn--ghost" href="#sizing">What size do I need?</a>
       <a class="btn btn--ghost" href="tel:+64274446761">Call 027 444 6761</a>
     </div>
     <div class="hero-meta">
@@ -417,99 +416,6 @@
   </div>
 </section>
 
-<!-- ===== SIZING CALCULATOR ===== -->
-<section class="band-light" id="sizing" style="scroll-margin-top:70px">
-  <div class="wrap">
-    <span class="eyebrow center" style="display:flex;justify-content:center;margin-bottom:6px">Sizing tool</span>
-    <style>
-      .hpsize{--ink:#0c1f4a;--ink-soft:#5b6b82;--accent:#d81f2b;--line:#dbe3ee;--surface:#ffffff;--surface-2:#eef2f8;--radius:10px;--font:"Be Vietnam Pro",system-ui,-apple-system,sans-serif}
-      .hpsize *,.hpsize *::before,.hpsize *::after{box-sizing:border-box}
-      .hpsize{font-family:var(--font);color:var(--ink);max-width:1080px;margin:0 auto;padding:8px;line-height:1.5}
-      .hpsize h2{font-family:var(--font);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-transform:none;letter-spacing:-0.01em;margin:0 0 .4em}
-      .hpsize .hp-intro{color:var(--ink-soft);margin:0 0 1.75rem;max-width:62ch}
-      .hpsize .hp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
-      @media(max-width:860px){.hpsize .hp-grid{grid-template-columns:1fr}}
-      .hpsize fieldset{border:0;margin:0;padding:0;min-width:0}
-      .hpsize legend{font-size:1rem;font-weight:700;padding:0 0 .85rem;display:block}
-      .hpsize legend .hp-num{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.35em}
-      .hpsize .hp-dim{display:grid;grid-template-columns:4.5rem 1fr 4.75rem;align-items:center;gap:.65rem;margin-bottom:.9rem}
-      .hpsize .hp-dim>label{font-size:.875rem;color:var(--ink-soft)}
-      .hpsize .hp-dim input[type="number"]{width:100%;padding:.45rem .5rem;border:1px solid var(--line);border-radius:6px;font:inherit;font-variant-numeric:tabular-nums;text-align:center;background:var(--surface);color:inherit}
-      .hpsize .hp-dim input[type="number"]:focus-visible,.hpsize select:focus-visible,.hpsize .hp-opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-      .hpsize .hp-unit{grid-column:3;font-size:.75rem;color:var(--ink-soft);text-align:center;margin:-.55rem 0 .55rem}
-      .hpsize input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;background:var(--line);cursor:pointer}
-      .hpsize input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
-      .hpsize input[type="range"]::-moz-range-thumb{width:20px;height:20px;border:3px solid var(--surface);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--line)}
-      .hpsize .hp-opt{display:block;width:100%;text-align:left;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:.8rem .95rem;margin-bottom:.6rem;cursor:pointer;font:inherit;color:inherit;transition:border-color .12s,background .12s}
-      .hpsize .hp-opt:hover{border-color:var(--ink-soft)}
-      .hpsize .hp-opt[aria-pressed="true"]{border-color:var(--accent);background:var(--surface);box-shadow:inset 3px 0 0 var(--accent)}
-      .hpsize .hp-opt strong{display:block;font-weight:600}
-      .hpsize .hp-opt span{display:block;font-size:.8125rem;color:var(--ink-soft);margin-top:.15rem}
-      .hpsize select{width:100%;padding:.6rem .7rem;border:1px solid var(--line);border-radius:6px;font:inherit;background:var(--surface);color:inherit}
-      .hpsize .hp-result{margin-top:1.75rem;background:var(--ink);color:#fff;border-radius:var(--radius);padding:1.5rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1.75rem;align-items:center}
-      @media(max-width:620px){.hpsize .hp-result{grid-template-columns:1fr;gap:1rem}}
-      .hpsize .hp-figure{font-size:clamp(2.5rem,8vw,3.5rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
-      .hpsize .hp-figure small{font-size:.35em;font-weight:500;margin-left:.15em;opacity:.8}
-      .hpsize .hp-figure-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;opacity:.7;margin-bottom:.5rem}
-      .hpsize .hp-working{font-size:.875rem;opacity:.82;margin:0}
-      .hpsize .hp-working b{font-weight:600;opacity:1}
-      .hpsize .hp-suggest{margin:.65rem 0 0;font-size:.9375rem}
-      .hpsize .hp-suggest b{color:var(--accent)}
-      .hpsize .hp-note{font-size:.8125rem;color:var(--ink-soft);margin:1rem 0 0;max-width:70ch}
-      @media(prefers-reduced-motion:reduce){.hpsize *{transition:none !important}}
-    </style>
-    <div class="hpsize">
-      <h2>What size heat pump do I need?</h2>
-      <p class="hp-intro">Enter your room dimensions, tell us how well insulated it is, and pick your region. We'll work out the heating capacity the room needs.</p>
-      <div class="hp-grid">
-        <fieldset>
-          <legend><span class="hp-num">1.</span>How large is your room?</legend>
-          <div class="hp-dim"><label for="hp-w">Width</label><input type="range" id="hp-w-r" min="1" max="20" step="0.1" value="4" aria-hidden="true" tabindex="-1"><input type="number" id="hp-w" min="1" max="20" step="0.1" value="4" aria-label="Room width in metres"></div>
-          <div class="hp-dim"><label for="hp-l">Length</label><input type="range" id="hp-l-r" min="1" max="20" step="0.1" value="3" aria-hidden="true" tabindex="-1"><input type="number" id="hp-l" min="1" max="20" step="0.1" value="3" aria-label="Room length in metres"></div>
-          <div class="hp-dim"><label for="hp-h">Height</label><input type="range" id="hp-h-r" min="2" max="5" step="0.1" value="2.4" aria-hidden="true" tabindex="-1"><input type="number" id="hp-h" min="2" max="5" step="0.1" value="2.4" aria-label="Room height in metres"></div>
-          <p class="hp-unit">metres</p>
-        </fieldset>
-        <fieldset>
-          <legend><span class="hp-num">2.</span>How insulated is your room?</legend>
-          <div id="hp-insulation"></div>
-        </fieldset>
-        <fieldset>
-          <legend><span class="hp-num">3.</span>Where are you located?</legend>
-          <select id="hp-region" aria-label="Region"></select>
-          <p class="hp-note" id="hp-region-note"></p>
-        </fieldset>
-      </div>
-      <div class="hp-result" role="status" aria-live="polite">
-        <div><div class="hp-figure-label">Heating capacity needed</div><div class="hp-figure"><span id="hp-kw">1.6</span><small>kW</small></div></div>
-        <div><p class="hp-working" id="hp-working"></p><p class="hp-suggest" id="hp-suggest"></p></div>
-      </div>
-      <p class="hp-note">This is a guide only. A site visit is the only way to account for glazing, orientation, draughts and ceiling space. Talk to us and we'll confirm the right unit for your room.</p>
-    </div>
-    <script>
-    (function(){
-      "use strict";
-      var INSULATION=[{id:"new",rate:45,label:"New build",blurb:"Fully insulated new home build (2016 onwards)."},{id:"full",rate:50,label:"Fully insulated",blurb:"Modern home with ceiling, wall and floor insulation (pre-2016)."},{id:"ok",rate:55,label:"Partially insulated",blurb:"Ceiling and/or floor insulation. Or well insulated with lots of windows."},{id:"old",rate:60,label:"Poorly insulated",blurb:"Cold damp home with little or no insulation."}];
-      var REGIONS=[{id:"NL",label:"Northland",temp:5},{id:"AK",label:"Auckland",temp:2},{id:"WK",label:"Waikato",temp:0},{id:"BP",label:"Bay of Plenty",temp:2},{id:"GS",label:"Gisborne",temp:2},{id:"HB",label:"Hawke's Bay",temp:0},{id:"TK",label:"Taranaki",temp:2},{id:"MW",label:"Manawatu / Whanganui",temp:0},{id:"WN",label:"Wellington",temp:0},{id:"NM",label:"Nelson / Marlborough",temp:0},{id:"WC",label:"West Coast",temp:0},{id:"CH",label:"Canterbury",temp:-3},{id:"CO",label:"Central Otago",temp:-5},{id:"OT",label:"Otago",temp:-3},{id:"IN",label:"Southland",temp:-3}];
-      var DEFAULT_REGION="CO",DEFAULT_INSULATION="ok",UNIT_SIZES=[2.5,3.2,4.2,5.0,6.0,7.1,8.0,9.0,10.0];
-      var $=function(id){return document.getElementById(id);};
-      var state={w:4,l:3,h:2.4,insulation:DEFAULT_INSULATION,region:DEFAULT_REGION};
-      var insWrap=$("hp-insulation");
-      INSULATION.forEach(function(opt){var b=document.createElement("button");b.type="button";b.className="hp-opt";b.dataset.id=opt.id;b.setAttribute("aria-pressed",String(opt.id===state.insulation));b.innerHTML="<strong></strong><span></span>";b.querySelector("strong").textContent=opt.label;b.querySelector("span").textContent=opt.blurb;b.addEventListener("click",function(){state.insulation=opt.id;Array.prototype.forEach.call(insWrap.children,function(el){el.setAttribute("aria-pressed",String(el.dataset.id===opt.id));});render();});insWrap.appendChild(b);});
-      var regionSel=$("hp-region");
-      REGIONS.forEach(function(r){var o=document.createElement("option");o.value=r.id;o.textContent=r.label;regionSel.appendChild(o);});
-      regionSel.value=state.region;
-      regionSel.addEventListener("change",function(){state.region=regionSel.value;render();});
-      ["w","l","h"].forEach(function(key){var num=$("hp-"+key),rng=$("hp-"+key+"-r");function set(v,from){var n=parseFloat(v);if(isNaN(n))return;var min=parseFloat(num.min),max=parseFloat(num.max);n=Math.min(max,Math.max(min,n));state[key]=n;if(from!=="num")num.value=n;if(from!=="rng")rng.value=n;render();}num.addEventListener("input",function(){set(num.value,"num");});rng.addEventListener("input",function(){set(rng.value,"rng");});});
-      function calculate(s){var ins=INSULATION.filter(function(i){return i.id===s.insulation;})[0];var reg=REGIONS.filter(function(r){return r.id===s.region;})[0];var volume=s.w*s.l*s.h;var watts=volume*ins.rate;return{volume:volume,rate:ins.rate,kw:watts/1000,temp:reg.temp,regionLabel:reg.label};}
-      function suggestUnit(kw){for(var i=0;i<UNIT_SIZES.length;i++){if(UNIT_SIZES[i]>=kw)return UNIT_SIZES[i];}return null;}
-      function fmt(n){return (Math.round(n*10)/10).toString();}
-      function render(){var r=calculate(state);var kw=Math.round(r.kw*10)/10;$("hp-kw").textContent=kw.toFixed(1);$("hp-working").innerHTML="<b>"+fmt(state.w)+" &times; "+fmt(state.l)+" &times; "+fmt(state.h)+" m</b> = "+fmt(Math.round(r.volume*10)/10)+" m&sup3;, at "+r.rate+" W per m&sup3;, rated at "+r.temp+"&deg;C outside.";var unit=suggestUnit(kw);$("hp-suggest").innerHTML=unit?"Look for a unit rated <b>"+unit.toFixed(1)+" kW</b> or above at "+r.temp+"&deg;C.":"This room is larger than a single unit will comfortably cover. Ask us about a multi room or ducted system.";$("hp-region-note").textContent="Sized against "+r.temp+"°C, the winter design temperature for "+r.regionLabel+".";}
-      render();
-    })();
-    </script>
-  </div>
-</section>
-
 <!-- ===== FAQ ===== -->
 <section class="band-bone" id="faq" style="scroll-margin-top:70px">
   <div class="wrap">
@@ -538,7 +444,7 @@
         </summary>
         <div class="acc-body">
           <p>It depends on the volume of the room, how well insulated it is, and the winter design temperature where you live. Central Otago is sized against about &minus;5&deg;C, colder than most of the country, so a unit that would suit a lounge in Auckland is undersized here.</p>
-          <p>Our <a href="#sizing">sizing tool</a> gives you a starting figure in about thirty seconds. Glazing, orientation, draughts and ceiling height all move the number, so we confirm it on site before quoting.</p>
+          <p>Glazing, orientation, draughts and ceiling height all affect the size you need. <a href="#contact">Talk to our team</a> and we’ll confirm the right unit on site before quoting.</p>
         </div>
       </details>
       <details class="acc-item">
