@@ -102,16 +102,16 @@ a{color:inherit;text-decoration:none}
   background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
   background-size:64px 64px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%,transparent);mask-image:linear-gradient(180deg,transparent,#000 40%,transparent)}
 .hero-inner{position:relative;z-index:2;padding:104px var(--pad) 52px;max-width:1470px;margin:0 auto;width:100%}
-.hero-eyebrow{text-shadow:0 1px 14px rgba(6,14,34,.9),0 1px 3px rgba(6,14,34,.6);color:#fff;font-family:"Teko",sans-serif;font-weight:600;font-size:.92rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:12px;line-height:1}
+.hero-eyebrow{text-shadow:0 1px 14px rgba(6,14,34,.9),0 1px 3px rgba(6,14,34,.6);color:#fff;font-family:"Teko",sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:12px;line-height:1}
 .hero-eyebrow::before{content:"";width:26px;height:2px;background:#F2444F}
-.hero h1{color:#fff;font-size:clamp(2.2rem,5.1vw,3.8rem);margin:14px 0 22px;max-width:20ch;text-transform:uppercase;font-weight:600;text-shadow:0 2px 26px rgba(6,14,34,.72),0 1px 3px rgba(6,14,34,.5)}
+.hero h1{color:#fff;font-size:clamp(2rem,4.5vw,3.3rem);margin:14px 0 22px;max-width:20ch;text-transform:uppercase;font-weight:600;text-shadow:0 2px 26px rgba(6,14,34,.72),0 1px 3px rgba(6,14,34,.5)}
 .hero h1 em{color:#F2444F;font-style:normal}
 .hero p.lede{color:#e3e6ea;font-size:clamp(.94rem,1.25vw,1.04rem);max-width:52ch;margin-bottom:24px;line-height:1.6}
 .hero-cta{display:flex;flex-wrap:wrap;gap:11px}
-.hero-cta .btn{min-height:46px;padding:11px 20px;font-size:.92rem}
+.hero-cta .btn{min-height:44px;padding:10px 17px;font-size:.82rem}
 .hero-meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
 .hero-meta div{color:#dde2e9;font-size:.74rem;letter-spacing:.03em;text-shadow:0 1px 10px rgba(6,14,34,.75)}
-.hero-meta b{text-shadow:0 1px 12px rgba(6,14,34,.8);display:block;font-family:"Teko",sans-serif;font-weight:600;color:#fff;font-size:1.18rem;letter-spacing:.03em;line-height:1.05}
+.hero-meta b{text-shadow:0 1px 12px rgba(6,14,34,.8);display:block;font-family:"Teko",sans-serif;font-weight:600;color:#fff;font-size:1.05rem;letter-spacing:.03em;line-height:1.05}
 
 /* ---------- sections ---------- */
 section{padding:clamp(64px,9vw,108px) 0}
@@ -439,7 +439,7 @@ section{padding:clamp(64px,9vw,108px) 0}
   .hero-cta{gap:8px}
   .hero-cta .btn{min-height:40px;padding:10px 14px;font-size:.75rem}
   .contact-btns .btn{padding:13px;font-size:.78rem}
-  .hero h1{font-size:clamp(1.85rem,7.6vw,2.4rem)}
+  .hero h1{font-size:clamp(1.75rem,7vw,2.2rem)}
   .hc-intro h2{font-size:clamp(1.55rem,6.4vw,1.95rem)}
   .hc-intro p{font-size:1rem}
 }
